@@ -6,6 +6,9 @@ import toJson from "enzyme-to-json";
 import { ThemeProvider } from "emotion-theming";
 import theme from "../src/themes";
 
+/**
+ * @param { function, boolean } react component and option to use mount or shallow
+ */
 const getTestComponent = ({ component, mount = true }) => {
   const createComponent = mount ? _mount : shallow;
   return toJson(
