@@ -1,15 +1,15 @@
 const links = [
   {
-    name: "Social",
-    id: "social"
+    name: 'Social',
+    id: 'social'
   },
   {
-    name: "Gallery",
-    id: "gallery"
+    name: 'Gallery',
+    id: 'gallery'
   },
   {
-    name: "Work",
-    id: "work"
+    name: 'Work',
+    id: 'work'
   }
 ];
 

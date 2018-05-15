@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from 'react-emotion';
 
-const BodyStyle = styled("div")`
+const BodyStyle = styled('div')`
   background: ${({ theme: { colors } }) => colors.grey.superLight};
   width: 100%;
   text-align: center;

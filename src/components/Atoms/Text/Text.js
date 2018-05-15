@@ -1,8 +1,8 @@
-import React from "react";
-import Proptypes from "prop-types";
-import styled from "react-emotion";
+import React from 'react';
+import Proptypes from 'prop-types';
+import styled from 'react-emotion';
 
-const StyledText = styled("p")`
+const StyledText = styled('p')`
   font-family: ${({ font }) => font};
   font-weight: ${({ fontWeight }) => fontWeight};
   font-size: ${({ size }) => size};
@@ -34,18 +34,32 @@ const Text = ({
       link,
       styles,
       ...rest
-    }}
-  >
+    }}>
     {text}
   </StyledText>
 );
 
 Text.propTypes = {
-  text: Proptypes.string.isRequired
+  text: Proptypes.string.isRequired,
+  color: Proptypes.string,
+  align: Proptypes.string,
+  backgroundColor: Proptypes.string,
+  font: Proptypes.string,
+  size: Proptypes.number,
+  fontWeight: Proptypes.string,
+  link: Proptypes.string,
+  styles: Proptypes.object
 };
 
 Text.defaultProps = {
-  text: ""
+  color: '',
+  align: '',
+  backgroundColor: '',
+  font: '',
+  size: '',
+  fontWeight: '',
+  link: '',
+  styles: ''
 };
 
 export default Text;

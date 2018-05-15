@@ -1,3 +1,3 @@
-import Nameplate from "./Nameplate";
+import Nameplate from './Nameplate';
 
 export default Nameplate;

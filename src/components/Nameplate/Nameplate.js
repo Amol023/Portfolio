@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from 'react-emotion';
 //  COMPONENT IMPORTS
-import Text from "../Atoms/Text";
+import Text from '../Atoms/Text';
 
-const StyledNamePlate = styled("section")`
+const StyledNamePlate = styled('section')`
   border: 2px solid ${({ theme: { colors } }) => colors.grey.disabled};
   height: 100px;
   width: 100px;
@@ -12,7 +12,7 @@ const StyledNamePlate = styled("section")`
 
 const NamePlate = () => (
   <StyledNamePlate>
-    <Text text={"AJ"} />
+    <Text text="AJ" />
   </StyledNamePlate>
 );
 

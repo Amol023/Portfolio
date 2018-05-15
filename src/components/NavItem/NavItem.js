@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "react-emotion";
+import React from 'react';
+import styled from 'react-emotion';
 //  COMPONENT IMPORTS
-import Text from "../Atoms/Text";
+import Text from '../Atoms/Text';
 
-const StyledNavItem = styled("li")``;
+const StyledNavItem = styled('li')``;
 
 const NavItem = ({ name, id }) => (
   <StyledNavItem>
