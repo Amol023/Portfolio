@@ -16,6 +16,7 @@ module.exports = {
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/require-default-props": 1,
+    "react/jsx-closing-bracket-location": 0,
     "react/prop-types": 1
   }
 };

@@ -12,7 +12,7 @@ const StyledNamePlate = styled('section')`
 
 const NamePlate = () => (
   <StyledNamePlate>
-    <Text text="AJ" />
+    <Text text="AJ" size="2em" align="center" fontWeight="bold" />
   </StyledNamePlate>
 );
 
