@@ -12,5 +12,7 @@ const links = [
     id: 'work'
   }
 ];
+const about =
+  'Hello 😃, I am Amol and I like building websites that can tell a story.';
 
-export { links };
+export { links, about };
