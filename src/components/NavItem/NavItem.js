@@ -5,9 +5,9 @@ import Text from '../Atoms/Text';
 
 const StyledNavItem = styled('li')``;
 
-const NavItem = ({ name, id }) => (
+const NavItem = ({ name }) => (
   <StyledNavItem>
-    <Text text={name} />
+    <Text text={name} font="Lora" />
   </StyledNavItem>
 );
 
