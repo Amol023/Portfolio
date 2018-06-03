@@ -17,9 +17,7 @@ const StyledNavMenu = styled('ul')`
 
 const NavMenu = () => (
   <StyledNavMenu>
-    {links.map(link => {
-      return <NavItem {...link} key={link.id} />;
-    })}
+    {links.map(link => <NavItem {...link} key={link.id} />)}
   </StyledNavMenu>
 );
 
