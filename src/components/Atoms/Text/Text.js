@@ -1,6 +1,7 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import { Link } from 'react-router-dom';
 
 const StyledText = styled('p')`
   font-family: ${({ font }) => font};
@@ -11,54 +12,70 @@ const StyledText = styled('p')`
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
+const StyledLink = styled(Link)`
+  color: inherit;
+  background-color: inherit;
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
+
 const Text = ({
-  text,
-  color,
   align,
   backgroundColor,
+  color,
   font,
-  size,
   fontWeight,
   link,
+  linkTo,
+  size,
   styles,
+  text,
   ...rest
 }) => (
   <StyledText
     {...{
-      color,
       align,
       backgroundColor,
+      color,
       font,
-      size,
       fontWeight,
       link,
+      size,
       styles,
       ...rest
     }}>
-    {text}
+    {linkTo ? <StyledLink to={linkTo}>{text}</StyledLink> : text}
   </StyledText>
 );
 
 Text.propTypes = {
-  text: Proptypes.string.isRequired,
-  color: Proptypes.string,
-  align: Proptypes.string,
-  backgroundColor: Proptypes.string,
-  font: Proptypes.string,
-  size: Proptypes.number,
-  fontWeight: Proptypes.string,
-  link: Proptypes.string,
-  styles: Proptypes.object
+  align: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  color: PropTypes.string,
+  font: PropTypes.string,
+  fontWeight: PropTypes.string,
+  link: PropTypes.string,
+  linkTo: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  styles: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  text: PropTypes.string.isRequired
 };
 
 Text.defaultProps = {
-  color: '',
   align: '',
   backgroundColor: '',
+  color: '',
   font: '',
-  size: '',
   fontWeight: '',
   link: '',
+  linkTo: '',
+  size: '',
   styles: ''
 };
 

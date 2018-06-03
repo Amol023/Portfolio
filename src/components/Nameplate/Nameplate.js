@@ -3,17 +3,61 @@ import styled from 'react-emotion';
 //  COMPONENT IMPORTS
 import Text from '../Atoms/Text';
 
-const StyledNamePlate = styled('section')`
-  border: 2px solid ${({ theme: { colors } }) => colors.grey.disabled};
+const AnimationDiv = styled('div')`
+  position: absolute;
+  border: 2px solid;
   height: 100px;
   width: 100px;
-  margin: 2%;
+  border-radius: 1px;
+  animation: off 1s ease 1;
+  &:hover {
+    animation: on 1s ease 1;
+    cursor: pointer;
+  }
+  @keyframes on {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+  @keyframes off {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+`;
+
+const Name = styled(Text)`
+  margin-left: 5%;
+`;
+
+const PlateContainer = styled('div')`
+  position: relative;
+`;
+const NameContainer = styled('div')`
+  position: absolute;
+  width: 100px;
 `;
 
 const NamePlate = () => (
-  <StyledNamePlate>
-    <Text text="AJ" size="2em" align="center" fontWeight="bold" font="Lora" />
-  </StyledNamePlate>
+  <PlateContainer>
+    <NameContainer>
+      <Name
+        text="AJ"
+        size="2em"
+        align="center"
+        fontWeight="bold"
+        font="Lora"
+        linkTo="/"
+      />
+    </NameContainer>
+    <AnimationDiv />
+  </PlateContainer>
 );
 
 export default NamePlate;

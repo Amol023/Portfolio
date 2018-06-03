@@ -15,13 +15,11 @@ const StyledHeader = styled('header')`
   })};
 `;
 
-const Header = () => {
-  return (
-    <StyledHeader>
-      <NamePlate />
-      <NavMenu />
-    </StyledHeader>
-  );
-};
+const Header = () => (
+  <StyledHeader>
+    <NamePlate />
+    <NavMenu />
+  </StyledHeader>
+);
 
 export default Header;
