@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
+import { Image, CloudinaryContext } from 'cloudinary-react';
 import styled, { css } from 'react-emotion';
-import firebase from 'firebase';
 
 const GalleryContainer = styled('div')`
   ${css({ flexDirection: 'row', justifyContent: 'space-between' })};
   height: 100vh;
   border-radius: 2px;
+  overflow: auto;
 `;
-const config = {
-  apiKey: 'AIzaSyBimgILX9hRA5BbfTMrxY_lKhLCsAHLCVc',
-  authDomain: 'portfolio-53c4e.firebaseapp.com',
-  databaseURL: 'https://portfolio-53c4e.firebaseio.com',
-  projectId: 'portfolio-53c4e',
-  storageBucket: 'portfolio-53c4e.appspot.com',
-  messagingSenderId: '770378930298'
-};
 
-firebase.initializeApp(config);
-const storage = firebase.storage();
-const storageRef = storage.refFromURL('gs://portfolio-53c4e.appspot.com');
-
-const getUrl = () =>
-  storageRef
-    .child('images')
-    .getDownloadURL()
-    .then(url => url);
-
+const imageIds = [
+  'horse_ashland',
+  'beetle_oregon',
+  'udaipur',
+  'contrast_portland',
+  'vista_house_gorge'
+];
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-    const url = getUrl();
-    this.state = {
-      url
-    };
-  }
+  state = {};
 
   render() {
-    const { url } = this.state;
     return (
       <GalleryContainer>
-        <img src={url.i} alt="Mountain View" width="100%" height="100vh" />
+        <CloudinaryContext cloudName="daj5mgoka" width="1200" height="800">
+          {imageIds.map(id => <Image publicId={id} responsive />)}
+        </CloudinaryContext>
       </GalleryContainer>
     );
   }
